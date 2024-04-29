@@ -109,6 +109,16 @@ const CHAIN_CONFIGS: { [key: number]: ChainConfig } = {
     weth: '0x3e57d6946f893314324C975AA9CEBBdF3232967E',
     creationBlock: 	2337161,
   },
+  [7560]: { // cryber main
+    router: '0xff487df619DBb47E94e41d3AAa3D4fd6e421c8A2',
+    weth: '0x3e57d6946f893314324C975AA9CEBBdF3232967E',
+    creationBlock: 	2337161,
+  },
+  [111557560]: { // cryber tesetnet
+    router: '0xBC37fCfC92aFBfaEC97bF2bf112B015C8Fc8F066',
+    weth: '0x4200000000000000000000000000000000000006',
+    creationBlock: 	391990,
+  }
 }
 
 export const UNIVERSAL_ROUTER_ADDRESS = (chainId: number): string => {
