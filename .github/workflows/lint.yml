@@ -37,7 +37,7 @@ jobs:
         run: yarn build
 
       - name: cp
-        run: cp -r dist dist2/dist
+        run: mkdir dist2|cp -r dist dist2/dist
       
       - name: Deploy to dist branch
         uses: JamesIves/github-pages-deploy-action@v4.3.3
