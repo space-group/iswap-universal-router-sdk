@@ -3,7 +3,7 @@ name: Lint
 on:
   push:
     branches:
-      - main
+      - release
   pull_request:
 
 jobs:
@@ -31,3 +31,24 @@ jobs:
 
       - name: Lint
         run: yarn prettier
+
+      - name: build
+        run: yarn build
+
+      # needed to generate abi
+      - name: Build solidity
+        run: forge build
+
+      - name: Deploy to dist branch
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: dist # 部署的目标分支
+          folder: dist # 要部署的目录
+
+      - name: Create Release Tag
+        if: success()
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git tag -a v${{ github.sha }} -m "Automated release from commit ${{ github.sha }}"
+          git push origin v${{ github.sha }}
