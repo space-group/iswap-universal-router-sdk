@@ -37,13 +37,13 @@ jobs:
         run: yarn build
 
       - name: cp
-        run: cp -r dist dist/dist
+        run: cp -r dist dist2/dist
       
       - name: Deploy to dist branch
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           branch: dist # 部署的目标分支
-          folder: dist # 要部署的目录
+          folder: dist2 # 要部署的目录
 
       - name: Create Release Tag
         if: success()
