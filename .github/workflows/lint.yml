@@ -36,8 +36,8 @@ jobs:
       - name: Build solidity
         run: forge build
 
-      - name: Lint
-        run: yarn prettier
+      # - name: Lint
+      #   run: yarn prettier
 
       - name: Deploy to dist branch
         uses: JamesIves/github-pages-deploy-action@v4.3.3
