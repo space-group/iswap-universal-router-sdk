@@ -29,6 +29,9 @@ jobs:
         with:
           version: nightly
 
+      - name: clean build
+        run: rm -rf dist
+  
       # needed to generate abi
       - name: Build solidity
         run: forge build
