@@ -44,6 +44,9 @@ jobs:
       - name: cp
         run: cp -r dist dist2/dist
 
+      - name: cp2
+        run: cp package.json dist2/package.json
+
       - name: Deploy to dist branch
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
